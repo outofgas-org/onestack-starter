@@ -1,0 +1,24 @@
+{
+  "name": "onestack-starter",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "bun run --filter './apps/*' dev",
+    "dev:web": "bun run --cwd apps/web dev",
+    "dev:api": "bun run --cwd apps/api dev",
+    "build": "bun run --filter @onestack/web build",
+    "lint": "bun run --filter @onestack/web lint && bun run --filter @onestack/api lint",
+    "check": "bun run build && bun run lint && bun run --filter @onestack/api typecheck",
+    "codegen": "bun run --filter @onestack/web codegen",
+    "prisma:generate": "bun run --filter @onestack/api prisma:generate",
+    "api:typecheck": "bun run --filter @onestack/api typecheck",
+    "api:check": "bun run --filter @onestack/api check"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
