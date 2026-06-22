@@ -4,7 +4,6 @@
 	"scripts": {
 		"dev": "PORT=5201 bun --hot src/index.ts",
 		"start": "bun src/index.ts",
-		"postinstall": "bun run prisma:generate",
 		"prisma:generate": "prisma generate",
 		"typecheck": "bun run prisma:generate && tsc --noEmit",
 		"lint": "biome check .",
