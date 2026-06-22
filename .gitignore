@@ -8,6 +8,8 @@ build/
 dist/
 coverage/
 generated/
+!apps/web/graphql/generated/
+!apps/web/graphql/generated/**
 
 # env files
 .env
